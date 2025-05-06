@@ -1,169 +1,161 @@
-*{
-   margin:0;
-   padding:0;
-}
-body{
-     display:grid;
-     grid-template-columns:35% 30% 35%;
-     
-}
-.esquerda{
-     
-     background-color:#008000;
-}
-.estrada{
-     display:grid;
-     background-color:#363636;
-     grid-template-columns:33.33% 33.33% 33.33%;
-     grid-template-rows:20% 20% 20% 20% 20%;
-}
-.direita{
-     background-color:#008000;
-     display:flex;
-     justify-content:center;
-      align-items:flex-end;
-}
-.caresquerda{
-          background-color:#363636; 
-          grid-row-start:5;
-          visibility:visible;
-          display:block;
-}
-.carcentro{
-          background-color:#363636; 
-          grid-column-start:2;
-          grid-row-start:5;
-          visibility:hidden;
-}
-.cardireita{
-          background-color:#363636; 
-          grid-column-start:3;
-          grid-row-start:5;
-          visibility:hidden;
-}
-	
+ *{
+    margin: 0;
+    padding: 0;
+ }
+ body{
+    display: grid;
+    grid-template-columns: 32% 3% 30% 3% 32%;
+ }
+ .esquerda{
+    grid-column-start: 1;
+    background-color: darkgreen;
+ }
+ .zebraesq{
+    grid-column-start: 2;
+    display: grid;
+    grid-template-rows: repeat(10,1fr) ;
+ }
+ .zebra1cor1{
+       background-color: white;
+ }
+ .zebra1cor2{
+    background-color: red;
+ }
+ #zebra1{
+       grid-row-start: 1;
+       background-color: white;
+ }
+ #zebra2{
+       grid-row-start: 2;
+       background-color: red;
+ }
+ #zebra3{
+       grid-row-start: 3;
+       background-color: white;
+ }
+ #zebra4{
+       grid-row-start: 4;
+       background-color: red;
+ }
+ #zebra5{
+       grid-row-start: 5;
+       background-color: white;
+ }
+ #zebra6{
+       grid-row-start: 6;
+       background-color: red;
+ }
+ #zebra7{
+       grid-row-start: 7;
+       background-color: white;
+ }
+ #zebra8{
+       grid-row-start: 8;
+       background-color: red;
+ }
+ #zebra9{
+       grid-row-start: 9;
+       background-color: white;
+ }
+ #zebra10{
+       grid-row-start: 10;
+       background-color: red;
+ }
+ .estrada{
+    grid-column-start: 3;
+    background-color: #363636;
+    
+ }
+ #zebradir{
+    grid-column-start: 4;
+    display: grid;
+    grid-template-rows: repeat(10,1fr) ;
+ }
+ .direita{
+    grid-column-start: 5;
+    background-color: darkgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+ .explosao{
+    position: absolute;
+    bottom: 1%;
+    display: none;
+ }
+ .explosao2{
+    position: absolute;
+    display: none;
+    left: 47%;
+    bottom: 1%;
+ }
+ .explosao3{
+    position: absolute;
+    left: 54%;
+    bottom: 1%;
+    display: none;
+ }
+ .caresquerda{
+    position: absolute;
+    bottom: 1%;
+    display: none;
+ }
+ .carcentro{
+    position: absolute;
+    display: block;
+    left: 47%;
+    bottom: 1%;
+ }
+ .cardireita{
+    position: absolute;
+    left: 58%;
+    bottom: 1%;
+    display: none; 
+ }
+ .iniesquerda{
+    position: absolute;
+    bottom: 100%;
+ }
+ .inicentro{
+    position: absolute;
+    left: 47%;
+    bottom: 100%; 
+ }
+ .inidireita{
+    position: absolute;
+    left: 58%;
+    bottom: 100%;
 
-#in1{
-     background-color:#363636; 
-          grid-column-start:1;
-          grid-row-start:1;
-          visibility:hidden;
-}
-#in2{
-     background-color:#363636; 
-          grid-column-start:1;
-          grid-row-start:2;
-          visibility:hidden;
-}
-#in3{
-        background-color:#363636; 
-         grid-column-start:1;
-         grid-row-start:3;
-        visibility:hidden;
-}
-#in4{
-     background-color:#363636; 
-          grid-column-start:1;
-          grid-row-start:4;
-      visibility:hidden;
-}
-#in5{
-     background-color:#363636; 
-          grid-column-start:1;
-          grid-row-start:5;
-          display:none;
-}
-#explosao{
-    background-color:#363636;
-    grid-column-start:1;
-          grid-row-start:5;
-          display:none;
-}
-#explosao2{
-    background-color:#363636;
-    grid-column-start:2;
-          grid-row-start:5;
-          display:none;
-}
-#explosao3{
-    background-color:#363636;
-    grid-column-start:3;
-          grid-row-start:5;
-          display:none;
-}
-
-#inc1{
-     background-color:#363636; 
-          grid-column-start:2;
-          grid-row-start:1;
-          visibility:hidden;
-}
-#inc2{
-     background-color:#363636; 
-          grid-column-start:2;
-          grid-row-start:2;
-          visibility:hidden;
-}
-#inc3{
-        background-color:#363636; 
-         grid-column-start:2;
-         grid-row-start:3;
-        visibility:hidden;
-}
-#inc4{
-     background-color:#363636; 
-          grid-column-start:2;
-          grid-row-start:4;
-      visibility:hidden;
-}
-#inc5{
-     background-color:#363636; 
-          grid-column-start:2;
-          grid-row-start:5;
-          display:none;
-}
-
-#ind1{
-     background-color:#363636; 
-          grid-column-start:3;
-          grid-row-start:1;
-          visibility:hidden;
-}
-#ind2{
-     background-color:#363636; 
-          grid-column-start:3;
-          grid-row-start:2;
-          visibility:hidden;
-}
-#ind3{
-        background-color:#363636; 
-         grid-column-start:3;
-         grid-row-start:3;
-        visibility:hidden;
-}
-#ind4{
-     background-color:#363636; 
-          grid-column-start:3;
-          grid-row-start:4;
-      visibility:hidden;
-}
-#ind5{
-     background-color:#363636; 
-          grid-column-start:3;
-          grid-row-start:5;
-          display:none;
-}
-.jogar{
-      width:75px;
-      height:75px;
-      border-radius:75px;
-      color:white;
-      background-color:blue;
-}
-.parar{
-      width:75px;
-      height:75px;
-      border-radius:75px;
-      color:white;
-      background-color:blue;
+ }
+ button{
+   width: 100px;
+   height: 40px;
+   border-radius: 10px;
+   margin: 10px;
+   border:none;
+ }
+ .caixaScore{
+   display: flex;
+   margin: 20px;
+ }
+ .caixaJogo{
+   display: flex;
+   margin: 20px;
+   flex-direction: row;
+   justify-content:space-between;
+ }
+ input{
+   border-radius: 10px;
+   font-size:20px;
+   width: 200px;
+   font-family: DejaVu Sans Mono, monospace;
+   background-color:black;
+   color:white;
+   padding-left:30px
+   border:none;
+ }
+button:hover{
+    cursor:pointer;
+    background-color:#ADD8E6;
 }

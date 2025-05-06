@@ -3,36 +3,56 @@
 <head>
    <title>Carrinho</title>
    <link rel="stylesheet" href="style.css">
-   <script src="script.js" defer></script>
+   <script src="script.js" wait ></script>
 </head>
 <body>
 <div class="esquerda"></div>
-<div class="estrada">
+<div class="zebraesq">
+<div id="zebra1" class="zebracor1"></div>
+<div id="zebra2" class="zebracor2"></div>
+<div id="zebra3" class="zebracor1"></div>
+<div id="zebra4" class="zebracor2"></div>
+<div id="zebra5" class="zebracor1"></div>
+<div id="zebra6" class="zebracor2"></div>
+<div id="zebra7" class="zebracor1"></div>
+<div id="zebra8" class="zebracor2"></div>
+<div id="zebra9" class="zebracor1"></div>
+<div id="zebra10" class="zebracor2"></div>
+
+</div>
+<div id="estrada" class="estrada">
     <div class="caresquerda"><img src="carro.png"></div>
-        <div id="in1" class="iniesquerda"><img src="carro2.png"></div>
-        <div id="in2" class="iniesquerda"><img src="carro2.png"></div>
-        <div id="in3" class="iniesquerda"><img src="carro2.png"></div>
-        <div id="in4" class="iniesquerda"><img src="carro2.png"></div>
-        <div id="in5" class="iniesquerda"><img src="carro2.png"></div>
-        <div id="explosao" class="explosao"><img src="explosao.png"></div>
+    <div id="explosao" class="explosao"><img src="explosao.png"></div>
     <div class="carcentro"><img src="carro.png"></div>
-        <div id="inc1" class="inicentro"><img src="carro2.png"></div>
-        <div id="inc2" class="inicentro"><img src="carro2.png"></div>
-        <div id="inc3" class="inicentro"><img src="carro2.png"></div>
-        <div id="inc4" class="inicentro"><img src="carro2.png"></div>
-        <div id="inc5" class="inicentro"><img src="carro2.png"></div>
-        <div id="explosao2" class="explosao2"><img src="explosao.png"></div>
+    <div id="explosao2" class="explosao2"><img src="explosao.png"></div>
     <div class="cardireita"><img src="carro.png"></div>
-        <div id="ind1" class="inidireita"><img src="carro2.png"></div>
-        <div id="ind2" class="inidireita"><img src="carro2.png"></div>
-        <div id="ind3" class="inidireita"><img src="carro2.png"></div>
-        <div id="ind4" class="inidireita"><img src="carro2.png"></div>
-        <div id="ind5" class="inidireita"><img src="carro2.png"></div>
-        <div id="explosao3" class="explosao3"><img src="explosao.png"></div>
+    <div id="explosao3" class="explosao3"><img src="explosao.png"></div>
+    <div id="iniesquerda" class="iniesquerda"><img src="carro2.png"></div>
+    <div id="inicentro" class="inicentro"><img src="carro2.png"></div>
+    <div id="inidireita" class="inidireita"><img src="carro2.png"></div>      
+</div>
+<div id="zebradir" class="zebra">
+    <div id="zebra1" class="zebracor1"></div>
+<div id="zebra2" class="zebracor2"></div>
+<div id="zebra3" class="zebracor1"></div>
+<div id="zebra4" class="zebracor2"></div>
+<div id="zebra5" class="zebracor1"></div>
+<div id="zebra6" class="zebracor2"></div>
+<div id="zebra7" class="zebracor1"></div>
+<div id="zebra8" class="zebracor2"></div>
+<div id="zebra9" class="zebracor1"></div>
+<div id="zebra10" class="zebracor2"></div>
 </div>
 <div class="direita">
-  <button id="jogar" class="jogar" onClick="jogar()">Play</button>
-  <button id="parar" class="parar" onClick="parar()">Stop</button>
+    <div class="caixaScore">
+          <h1>Score</h1>
+          <input id="mostraScore" readonly class="score">
+    </div>
+    <div class="caixaJogo">
+        <button id="jogar" class="jogar" onClick="jogar()">Play</button>
+         <button id="parar" class="parar" onClick="parar()">Stop</button>
+        </div>
+    </div>
 </div>
 
 </body>
