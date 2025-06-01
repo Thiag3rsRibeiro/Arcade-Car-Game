@@ -1,69 +1,76 @@
- *{
+	 *{
     margin: 0;
     padding: 0;
  }
  body{
     display: grid;
-    grid-template-columns: 32% 3% 30% 3% 32%;
+    grid-template-columns: 33% 2% 30% 2% 33%;
+    min-height:100vh;
  }
  .esquerda{
     grid-column-start: 1;
     background-color: darkgreen;
  }
+#arvore{
+    position:relative;
+    top:1%;
+    left:70%;
+}
  .zebraesq{
     grid-column-start: 2;
     display: grid;
     grid-template-rows: repeat(10,1fr) ;
  }
- .zebra1cor1{
+ .zebracor1{
        background-color: white;
  }
- .zebra1cor2{
+ .zebracor2{
     background-color: red;
  }
  #zebra1{
        grid-row-start: 1;
-       background-color: white;
- }
+    }   
  #zebra2{
        grid-row-start: 2;
-       background-color: red;
+       
  }
  #zebra3{
        grid-row-start: 3;
-       background-color: white;
+       
  }
  #zebra4{
        grid-row-start: 4;
-       background-color: red;
+       
  }
  #zebra5{
        grid-row-start: 5;
-       background-color: white;
+       
  }
  #zebra6{
        grid-row-start: 6;
-       background-color: red;
+     
  }
  #zebra7{
        grid-row-start: 7;
-       background-color: white;
+      
  }
  #zebra8{
        grid-row-start: 8;
-       background-color: red;
+      
  }
  #zebra9{
        grid-row-start: 9;
-       background-color: white;
+     
  }
  #zebra10{
        grid-row-start: 10;
-       background-color: red;
+      
  }
  .estrada{
     grid-column-start: 3;
     background-color: #363636;
+   
+   position: relative;
     
  }
  #zebradir{
@@ -103,7 +110,6 @@
  }
  .carcentro{
     position: absolute;
-    display: block;
     left: 47%;
     bottom: 1%;
  }
@@ -124,7 +130,7 @@
  }
  .inidireita{
     position: absolute;
-    left: 58%;
+    left: 80%;
     bottom: 100%;
 
  }
@@ -152,7 +158,7 @@
    font-family: DejaVu Sans Mono, monospace;
    background-color:black;
    color:white;
-   padding-left:30px
+   padding-left:30px;
    border:none;
  }
 button:hover{

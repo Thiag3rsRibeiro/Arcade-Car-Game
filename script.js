@@ -1,1153 +1,353 @@
-//move the cart
- document.addEventListener('keyup', function(event) {
-     const cardDireita = document.querySelector(".cardireita");
-     const cardCentro = document.querySelector(".carcentro");
-     const cardEsquerda = document.querySelector(".caresquerda");
 
-     if ((event.key === "ArrowLeft" || event.key==="a") && cardEsquerda.style.display === "none" && cardCentro.style.display === "block") {
-         cardEsquerda.style.display = "block";
-         cardCentro.style.display = "none";
-         console.log("2");
-     } else if ((event.key === "ArrowRight" || event.key==="d" )&& cardCentro.style.display === "block" && cardEsquerda.style.display === "none") {
-         cardDireita.style.display = "block";
-         cardCentro.style.display = "none";
-         console.log(cardEsquerda.style.visibility);
-     } else if ((event.key === "ArrowLeft" || event.key==="a") && cardDireita.style.display === "block" ) {
-         cardDireita.style.display = "none";
-         cardEsquerda.style.display = "none";
-         cardCentro.style.display = "block";
-         console.log("4");
-     } else if ((event.key === "ArrowRight" || event.key==="d") && cardDireita.style.display === "none" && cardCentro.style.display === "none" ) {
-         cardEsquerda.style.display = "none";
-         cardCentro.style.display = "block";
-         console.log("1");
-     }
- });
-
- //Load da página
-
-     document.addEventListener('DOMContentLoaded', function inicio() {
-     const cardCentro = document.querySelector('.carcentro');
-     const cardEsquerda = document.querySelector(".caresquerda");
-     cardEsquerda.style.display = "none";
-     cardCentro.style.display = "block";
-     document.querySelector(".cardireita").style.display = "none";
- });
-
-//Retorno após Game Over
-
-function retornaresqurda(){
-   const in5=document.getElementById("in5")
-   const cardDireita = document.querySelector(".cardireita");
-   const cardCentro = document.querySelector(".carcentro");
-   const carde=document.querySelector(".caresquerda")
-   const explosao=document.getElementById("explosao")
-   carde.style.display="block"
-   explosao.style.display="none"
-   cardDireita.style.display="none"
-   cardCentro.style.display="none"
-}
-function retornarcentro(){
-    const inc5=document.getElementById("inc5")
-   const cardDireita = document.querySelector(".cardireita");
-   const cardEsquerda = document.querySelector(".caresquerda");
-   const cardc=document.querySelector(".carcentro")
-   const explosao2=document.getElementById("explosao2")
-   cardc.style.display="block"
-   explosao2.style.display="none"
-   cardDireita.style.display="none"
-   cardEsquerda.style.display="none"
-}
-function retornardireita(){
-   const ind5=document.getElementById("ind5")
-   const cardCentro = document.querySelector(".carcentro");
-   const cardEsquerda = document.querySelector(".caresquerda");
-   const card=document.querySelector(".cardireita")
-   const explosao3=document.getElementById("explosao3")
-   card.style.display="block"
-   explosao3.style.display="none"
-   cardEsquerda.style.display="none"
-   cardCentro.style.display="none"
-}
-
-//Jogar
-
- let pausa=false;
- var posicao1;
- var posicao2;
- var posicao3;
- var velocidade;
- var score=0;
- var playId;
- var play2Id;
- var play3Id;
- var play4Id
- var play5Id
- var play6Id
- var play7Id;
- var play8Id;
- var play9Id;
- var play10Id;
- var play11Id;
- var play12Id;
- var play13Id;
- var play14Id;
- var play15Id;
- var play3Started=false
- var play2Started=false
- var playStarted=false
- var jogarStarted=false
- var play4Started=false
- var play5Started=false
- var play7Started=false
- var play8Started=false
- var play9Started=false
- var playStarted=false
- var play10Started=false
- var play11Started=false
- var play12Started=false
- var jogar13Started=false
- var play14Started=false
- var play15Started=false
- var jogar1Ativa=false
- var jogar2Ativa=false
- var jogar3Ativa=false
-function jogar() {
-     if(pausa){
-         return;
-}
-     jogar1Ativa=true
-     jogarStarted=true
-     posicao1 = 0;
-     posicao2 = 0;
-     posicao3 = 0;
-     velocidade = 10;
-     in1 = document.querySelector("#iniesquerda");
-     in2 = document.querySelector("#inicentro");
-     in3 = document.querySelector("#inidireita");
-     in3.style.top="-188px"
-     if(jogarStarted==true)
-     play();
-     play2();
-     play3();
-     if(score>18){
-        velocidade=11
-     }
-     if(score>36){
-        velocidade=12
-   }
-     if(score>54){
-      velocidade=13
-   }
-   if(score>72){
-      velocidade=14
-   }
- }
-///*
-function jogar2(){
-     if(pausa){
-         return;
-}  
-    jogar1Ativa=false
-    jogar2Ativa=true
-    jogarStarted=true
-     posicao1 = 0;
-     posicao2 = 0;
-     posicao3 = 0;
-     velocidade = 10;
-     in1 = document.querySelector("#iniesquerda");
-     in2 = document.querySelector("#inicentro");
-     in3 = document.querySelector("#inidireita");
-     in1.style.top="-188px"
-     if(jogarStarted==true)
-     play4();
-     play5();
-     play6();
-if(score>18){
-        velocidade=11
-     }
-    if(score>36){
-        velocidade=12
-   }
-    if(score>54){
-      velocidade=13
-   }
-   if(score>72){
-      velocidade=14
-   }
-}
-
-function jogar3(){
-     if(pausa){
-         return;
-}
-    jogar3Ativa=true
-    jogar2Ativa=false
-    jogarStarted=true
-     posicao1 = 0;
-     posicao2 = 0;
-     posicao3 = 0;
-     velocidade = 10;
-     in1 = document.querySelector("#iniesquerda");
-     in2 = document.querySelector("#inicentro");
-     in3 = document.querySelector("#inidireita");
-     in3.style.top="-188px"
-     if(jogarStarted==true)
-     play7();
-     play8();
-     play9();
- if(score>18){
-        velocidade=11
-     }
-    if(score>36){
-        velocidade=12
-   }
-   if(score>54){
-      velocidade=13
-   }
-   if(score>72){
-      velocidade=14
-   }
-}
-
-function jogar4() {
-     if(pausa){
-         return;
-}
-      console.log("jogar 4")
-     jogar1Ativa=true
-     jogarStarted=true
-     posicao1 = 0;
-     posicao2 = 0;
-     posicao3 = 0;
-     velocidade = 10;
-     in1 = document.querySelector("#iniesquerda");
-     in2 = document.querySelector("#inicentro");
-     in3 = document.querySelector("#inidireita");
-     in3.style.top="-188px"
-     if(jogarStarted==true)
-     play10();
-     play11();
-     play12();
-     if(score>18){
-        velocidade=11
-     }
-     if(score>36){
-        velocidade=12
-   }
-     if(score>54){
-      velocidade=13
-   }
-   if(score>72){
-      velocidade=14
-   }
- }
-
-function jogar5() {
-     if(pausa){
-         return;
-}
-      console.log("jogar 5")
-     jogar1Ativa=true
-     jogarStarted=true
-     posicao1 = 0;
-     posicao2 = 0;
-     posicao3 = 0;
-     velocidade = 10;
-     in1 = document.querySelector("#iniesquerda");
-     in2 = document.querySelector("#inicentro");
-     in3 = document.querySelector("#inidireita");
-     in3.style.top="-188px"
-     if(jogarStarted==true)
-     play13();
-     play14();
-     play15();
-     if(score>18){
-        velocidade=11
-     }
-     if(score>36){
-        velocidade=12
-   }
-     if(score>54){
-      velocidade=13
-   }
-   if(score>72){
-      velocidade=14
-   }
- }
-
-
-function play4() {
-   
-     const explosao2=document.querySelector(".explosao2")
-     const cardCentro = document.querySelector(".carcentro");
-     
-     if (posicao1 < 765 && play4Started==false) {
-        //console.log( "posicao1 "+posicao1)
-         posicao1 = posicao1 + velocidade;
-         in2.style.top = posicao1 + 'px';
-         if(cardCentro.style.display==="block" && posicao1>578){
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             cardCentro.style.display="none"
-             explosao2.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornarcentro()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-            
-             }, "350");
-           }
-         if (posicao1 > 578) {
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-            
-             play4Started=true
-             if(play6Started=false){
-             posicao1=-188-(765-578)}
-             score = score + 1;
-             mostraScore()
-       
-         }
-         
-     }
-      
-     play4Id = requestAnimationFrame(play4);
-     
- }
-function play5() {
-      const explosao3=document.querySelector(".explosao3")
-      const cardDireita = document.querySelector(".carDireita");
-     if (posicao2 < 765 && posicao1 > 578 && play5Started==false) {
-         posicao2 = posicao2 + velocidade;
-         in3.style.top = posicao2 + 'px';
-         if(posicao2>578 && cardDireita.style.display==="block"){
-
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";;
-             cardDireita.style.display="none"
-             explosao3.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornardireita()
-              posicao1=0
-              playStarted=false
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-             }, "350");
-           }
-         if (posicao2 > 578) {
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";
-             
-             play5Started=true
-               
-             score=score+1
-             mostraScore()
-             
-             if(score>=2 && !play6Started){
-            play6()
-            play6Started=false
-        }
-       
-         
-       }
-     }
-     play5Id = requestAnimationFrame(play5);
-     
- } 
-
-function play6() {
-    posicao1=0
-    //console.log( "posicao2 "+posicao2)
-     const cardEsquerda = document.querySelector(".caresquerda");
-     const explosao=document.getElementById("explosao")
-     if (posicao3<765 && posicao2 > 578 && play6Started==false ) {
-        
-         posicao3 = posicao3 + velocidade;
-         in1.style.top = posicao3 + 'px';
-        
-         if(cardEsquerda.style.display==="block" && posicao3>578){
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             cardEsquerda.style.display="none"
-             explosao.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornaresqurda()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-            
-             }, "350");
-           }
-         if (posicao3 > 578) {
-             
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             posicao3=-188-(765-578)
-             score=score+1
-             mostraScore()
-             
-             play7Started=false
-             play8Started=false
-             
-            cancelAnimationFrame(play7Id)
-            cancelAnimationFrame(play8Id)
-            
-            posicao2=0
-            
-            jogar3()
-         }
-         play6started=true
-      play6Id = requestAnimationFrame(play6);
-       
-      
-
-    }  
-     
- }
-
- function play() {
+class jogoCorrida {
+    constructor() {
+        this.cardCentro = cardCentro
+        this.velocidadeHorizontal = 10;
+        this.cardCentro.style.left = '43%'
+        this.in1 = in1;
+        this.in2 = in2;
+        this.in3 = in3;
+        this.explosao = explosao
+        this.explosao2 = explosao2;
+        this.explosao3 = explosao3;
+        this.score = 0
+        this.pausa = false
+        this.cardCentro.style.display = "block";
+        this.velocidade = 1
+        this.atualizaScore = atualizaScore;
+        this.arvore = arvore;
+        this.arvoreId;
+        this.posicaoArvore;
+        this.lastUpdateTime = 0
+        this.corZebraStarted
+        this.interval
+        this.corZebraId=null;
+        this.contador
     
-     const explosao=document.querySelector(".explosao")
-     const cardEsquerda = document.querySelector(".caresquerda");
-     
-     if (posicao1 < 765 && playStarted==false) {
-        //console.log( "posicao1 "+posicao1)
-         posicao1 = posicao1 + velocidade;
-         in1.style.top = posicao1 + 'px';
-         if(cardEsquerda.style.display==="block" && posicao1>578){
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             cardEsquerda.style.display="none"
-             explosao.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornaresqurda()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-            
-             }, "350");
-           }
-         if (posicao1 > 578) {
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-            
-             playStarted=true
-             if(play3Started=false){
-             posicao1=-188-(765-578)}
-             score = score + 1;
-             mostraScore()
-       
-         }
-         
-     }
-      
-     playId = requestAnimationFrame(play);
-     
- }
+        document.addEventListener('keydown', this.moverCarro.bind(this))
+        document.addEventListener('keyup', this.handlePausa.bind(this))
 
- function play2() {
-      const explosao2=document.querySelector(".explosao2")
-      const cardCentro = document.querySelector(".carcentro");
-     if (posicao2 < 765 && posicao1 > 578 && play2Started==false) {
-         posicao2 = posicao2 + velocidade;
-         in2.style.top = posicao2 + 'px';
-         if(posicao2>578 && cardCentro.style.display==="block"){
+    }
 
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";;
-             cardCentro.style.display="none"
-             explosao2.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornarcentro()
-              posicao1=0
-              playStarted=false
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-             }, "350");
-           }
-         if (posicao2 > 578) {
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             
-             play2Started=true
-               
-             score=score+1
-             mostraScore()
-             
-             if(score>=2 && !play3Started){
-            play3()
-            play3Started=false
+
+
+
+    corZebra=(timestamp)=> {
+        
+            
+        if (!this.lastUpdateTime) {
+            this.lastUpdateTime = timestamp;
         }
-       
-         
-       }
-     }
-     play2Id = requestAnimationFrame(play2);
-     
- }
-
- function play3() {
-    posicao1=0
-    //console.log( "posicao2 "+posicao2)
-     const cardDireita = document.querySelector(".cardireita");
-     const explosao3=document.getElementById("explosao3")
-     if (posicao3<765 && posicao2 > 578 && play3Started==false ) {
+        const zebra1 = document.querySelectorAll(".zebracor1")
+const zebra2 = document.querySelectorAll(".zebracor2")
+        console.log(this.lastUpdateTime)
+        const deltaTime = timestamp - this.lastUpdateTime;
+        console.log(this.contador)
         
-         posicao3 = posicao3 + velocidade;
-         in3.style.top = posicao3 + 'px';
-        
-         if(posicao3>578 && cardDireita.style.display==="block"){
-             
-             
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";;
-             cardDireita.style.display="none"
-             explosao3.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornardireita()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              //const atualizaScore=document.querySelector(".score")
-             // atualizaScore.value=score
-             }, "350");
-           }
-         if (posicao3 > 578) {
-             
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";
-             posicao3=-188-(765-578)
-             score=score+1
-             mostraScore()
-             
-             play4Started=false
-             play5Started=false
-             
-            cancelAnimationFrame(play4Id)
-            cancelAnimationFrame(play5Id)
-            
-            posicao2=0
-            
-            jogar2()
-         }
-         play3started=true
-      play3Id = requestAnimationFrame(play3);
-       
-      
-
-    }  
-     
- }
-
-
-function play7() {
-    
-     const explosao2=document.querySelector(".explosao2")
-     const cardCentro = document.querySelector(".carcentro");
-     const cardEsquerda= document.querySelector(".caresquerda");
-     if (posicao1 < 765 && play7Started==false) {
-        //console.log( "posicao1 "+posicao1)
-         posicao1 = posicao1 + velocidade;
-         in2.style.top = posicao1 + 'px';
-         in1.style.top = posicao1 + 'px'
-         if(cardCentro.style.display==="block" && posicao1>578){
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             cardCentro.style.display="none"
-             explosao2.style.display="block"
-             parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornarcentro()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-            
-             }, "350");
+        if (deltaTime > this.interval) {
+            console.log(this.lastUpdateTime)
+            zebra1.forEach(element => {
+                element.className = "zebracor" + this.contador;
+            });
+            zebra2.forEach(element => {
+                element.className = "zebracor" + (this.contador === 1 ? 2 : 1);
+            });
+            this.contador++;
+            if (this.contador > 2) {
+                this.contador = 1;
             }
-             if(cardEsquerda.style.display==="block" && posicao1>578){
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             cardEsquerda.style.display="none"
-             explosao.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornaresqurda()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
             
-             }, "350");
-          }
-         if (posicao1 > 578) {
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             play7Started=true
-             if(play6Started=false){
-             posicao1=-188-(765-578)}
-             score = score + 1;
-             mostraScore()
-       
-         }
-         
-     }
-      
-     play7Id = requestAnimationFrame(play7);
-     
- }
-function play8() {
-      console.log("velocidade "+velocidade )
-      const explosao3=document.querySelector(".explosao3")
-      const cardDireita = document.querySelector(".carDireita");
-      const cardCentro = document.querySelector(".carcentro");
-     if (posicao2 < 765 && posicao1 > 578 && play8Started==false) {
-         posicao2 = posicao2 + velocidade;
-         in3.style.top = posicao2 + 'px';
-         in2.style.top = posicao2 + 'px';
-         
-         if(posicao2>578 && cardDireita.style.display==="block"){
-
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";;
-             cardDireita.style.display="none"
-             explosao3.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornardireita()
-              posicao1=0
-              playStarted=false
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-             }, "350");
-           }
-            if(posicao2>578 && cardCentro.style.display==="block"){
-
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";;
-             cardCentro.style.display="none"
-             explosao2.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornarcentro()
-              posicao1=0
-              playStarted=false
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-             }, "350");
-           }
-
-         if (posicao2 > 578) {
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             play8Started=true
-               
-             score=score+1
-             mostraScore()
-             
-             if(score>=2 && !play9Started){
-            play9()
-            play9Started=false
+            this.lastUpdateTime = timestamp;
         }
-       
-         
-       }
-     }
-     play8Id = requestAnimationFrame(play8);
-     
- } 
+        this.corZebraId = requestAnimationFrame(this.corZebra);
+    }
 
-function play9() {
-    posicao1=0
-    //console.log( "posicao2 "+posicao2)
-     const cardEsquerda = document.querySelector(".caresquerda");
-     const explosao=document.getElementById("explosao")
-     if (posicao3<765 && posicao2 > 578 && play9Started==false ) {
-        
-         posicao3 = posicao3 + velocidade;
-         in1.style.top = posicao3 + 'px';
-        
-         if(posicao3>578 && cardEsquerda.style.display==="block"){
-             
-             
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";;
-             cardEsquerda.style.display="none"
-             explosao.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornaresqurda()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-             
-             }, "350");
-           }
-         if (posicao3 > 578) {
-             
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             posicao3=-188-(765-578)
-             score=score+1
-             mostraScore()
-             
-             play10Started=false
-             play11Started=false
-             
-            cancelAnimationFrame(play10Id)
-            cancelAnimationFrame(play11Id)
+
+    moverCarro(event) {
+        if (this.pausa) return;
+        let carroAtivo = this.cardCentro
+
+        if (carroAtivo) {
+            let leftAtual = parseInt(carroAtivo.style.left) || 0
+
+            if (event.key === "ArrowLeft" || event.key === "a") {
+
+                carroAtivo.style.left = (leftAtual - this.velocidadeHorizontal) + '%';
+
+            } else if (event.key === "ArrowRight" || event.key === "d") {
+                carroAtivo.style.left = (leftAtual + this.velocidadeHorizontal) + '%';
+
+            }
+            this.limitarMovimeto(carroAtivo)
+        }
+    }
+
+    gameOver() {
+        setTimeout(() => {
+            alert("Game Over")
+            this.retornar()
+            this.parar()
+
+            cancelAnimationFrame(this.corZebraId);
+            cancelAnimationFrame(this.arvoreId);
+            this.score = 0
+            this.mostraScore()
+
+
+        }, "350");
+    }
+    Explosao() {
+
+        if (this.in1.style.top >= "74%" && this.cardCentro.style.display === "block" && this.cardCentro.style.left < "33%") {
+
+            this.in1.style.position = "absolute";
+            this.in1.style.top = "-188px";
+            this.cardCentro.style.display = "none"
+            this.explosao.style.display = "block"
+            this.gameOver();
+        } else if (this.in2.style.top >= "74%" && this.cardCentro.style.display === "block" && (this.cardCentro.style.left > "33%" && this.cardCentro.style.left < "66%")) {
             
-            posicao2=0
-            
-            jogar4()
-         }
-         play9started=true
-      play9Id = requestAnimationFrame(play9);
-       
-      
+            this.in2.style.position = "absolute";
+            this.in2.style.top = "-188px";
+            this.cardCentro.style.display = "none"
+            this.explosao2.style.display = "block"
 
-    }  
-     
- }
+            this.gameOver();
+        } else if (this.in3.style.top >= "74%" && this.cardCentro.style.display === "block" && cardCentro.style.left > '66%') {
+
+            this.in3.style.position = "absolute";
+            this.in3.style.top = "-188px";
+            this.cardCentro.style.display = "none"
+            this.explosao3.style.display = "block"
+            this.gameOver();
+        } else {
+
+            return;
+        }
+    }
+
+    limitarMovimeto(carroAtivo) {
+        const estradaWidthPx = estrada.getBoundingClientRect().width;
+        const carroWidthPx = carroAtivo.offsetWidth; 
+        const carroWidthPercentage = (carroWidthPx / estradaWidthPx) * 100;
+
+        let currentLeftPercentage = parseFloat(carroAtivo.style.left) || 0;
+
+        
+        const minLeftPercentage = 0;
+        
+        const maxLeftPercentage = 100 - carroWidthPercentage;
+
+        
+        if (currentLeftPercentage < minLeftPercentage) {
+            carroAtivo.style.left = minLeftPercentage + '%';
+        } else if (currentLeftPercentage > maxLeftPercentage) {
+            carroAtivo.style.left = maxLeftPercentage + '%';
+        }
+    }
+
+    animarInimigos(arvore, inimigo, posicao, velocidade, condicaoDeParada) {
+        return new Promise(resolve => {
+            const animate = () => {
+                arvore.style.top = posicao + '%'
+                inimigo.style.display = "block"
+                inimigo.style.top = posicao + '%';
+                posicao += velocidade;
+
+                if (posicao > 74) {
+
+                    inimigo.style.display = "none";
+                    this.Explosao()
+                }
+                if (posicao == 94) {
+                    this.arvore.style.top = "-10%";
+                    this.arvore.style.display = "none"
+                    console.log
+                }
 
 
-function play10() {
+                if (condicaoDeParada(posicao)) {
+                    this.Score()
+                    this.mostraScore()
+                    cancelAnimationFrame(inimigo.animationId);
+                    cancelAnimationFrame(arvore.animationId);
+                    resolve();
+                } else {
+                    inimigo.animationId = requestAnimationFrame(animate)
+
+                }
+            }
+            inimigo.animationId = requestAnimationFrame(animate)
+        })
+    }
+
+    *iniciarAnimacoesInimigos() {
+        while (true) {
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in1, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in3, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in1, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in3, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in1, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in3, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in1, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in3, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in1, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in3, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in3, 0, this.velocidade, (posicao) => posicao > 100);
+            yield this.animarInimigos(this.arvore, this.in2, 0, this.velocidade, (posicao) => posicao > 100);
+        }
+    }
+
+
+    retornar() {
+
+        this.cardCentro.style.display = "block";
+        this.explosao.style.display = "none"
+        this.explosao2.style.display = "none"
+        this.explosao3.style.display = "none"
+
+    }
+
+
+
+    jogar() {
+        if (this.pausa) {
+            return;
+        }
+        this.lastUpdateTime = 0;
+
+        this.corZebraStarted = false
+        this.interval = 200;
+        this.corZebraId=null;
+        this.contador = 1;
+        this.posicaoArvore = 0;
+        this.arvoreStarted = false;
+        this.pausa = false
+        this.score = 0
+        this.velocidade = 1
+        const animacoes = this.iniciarAnimacoesInimigos();
+        const proximoPasso = () => {
+            const resultado = animacoes.next();
+            if (!resultado.done) {
+                resultado.value.then(proximoPasso)
+            } else {
+                animacoes;
+            }
+        }
+        proximoPasso()
+        this.in1.style.top = "-188px";
+        this.arvore.style.top = "1%"
+        this.in2.style.top = "-188px";
+        this.in3.style.top = "-188px";
+
+
+        console.log(this.lastUpdateTime)
+        this.corZebra();
+
+
+        if (this.score > 1000) {
+            this.velocidade = 1.4
+        }
+        if (this.score > 2000) {
+            this.velocidade = 1.8
+        }
+        if (this.score > 3000) {
+            this.velocidade = 2
+        }
+        if (this.score > 4000) {
+            this.velocidade = 2.4
+        }
+
+    }
+
     
-     const explosao=document.querySelector(".explosao")
-     const cardEsquerda = document.querySelector(".caresquerda");
-     
-     if (posicao1 < 765 && play10Started==false) {
-        //console.log( "posicao1 "+posicao1)
-         posicao1 = posicao1 + velocidade;
-         in1.style.top = posicao1 + 'px';
-         if(cardEsquerda.style.display==="block" && posicao1>578){
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             cardEsquerda.style.display="none"
-             explosao.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornaresqurda()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-            
-             }, "350");
-           }
-         if (posicao1 > 578) {
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-            
-             play10Started=true
-             if(play12Started=false){
-             posicao1=-188-(765-578)}
-             score = score + 1;
-             mostraScore()
-       
-         }
-         
-     }
-      
-     play10Id = requestAnimationFrame(play10);
-     
- }
 
- function play11() {
-      const explosao2=document.querySelector(".explosao2")
-      const cardCentro = document.querySelector(".carcentro");
-     if (posicao2 < 765 && posicao1 >= 188 && play11Started==false) {
-         posicao2 = posicao2 + velocidade;
-         in2.style.top = posicao2 + 'px';
-         if(posicao2>578 && cardCentro.style.display==="block"){
-
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";;
-             cardCentro.style.display="none"
-             explosao2.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornarcentro()
-              posicao1=0
-              playStarted=false
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-             }, "350");
-           }
-         if (posicao2 > 578) {
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             
-             play11Started=true
-               
-             score=score+1
-             mostraScore()
-             play11Started=true
-             if(score>=2 && !play12Started){
-            play12()
-            play12Started=false
-        }  
-           
-       }
-       
-     }
-     play11Id = requestAnimationFrame(play11);
-     
- }
-
- function play12() {
-    posicao1=0
-    //console.log( "posicao2 "+posicao2)
-     const cardDireita = document.querySelector(".cardireita");
-     const explosao3=document.getElementById("explosao3")
-     if (posicao3<765 && posicao2 >= 188 && play12Started==false ) {
-        
-         posicao3 = posicao3 + velocidade;
-         in3.style.top = posicao3 + 'px';
-        
-         if(posicao3>578 && cardDireita.style.display==="block"){
-             
-             
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";;
-             cardDireita.style.display="none"
-             explosao3.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornardireita()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              //const atualizaScore=document.querySelector(".score")
-             // atualizaScore.value=score
-             }, "350");
-           }
-         if (posicao3 > 578) {
-             
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";
-             posicao3=-188-(765-578)
-             score=score+1
-             mostraScore()
-             
-             play13Started=false
-             play14Started=false
-             
-            cancelAnimationFrame(play13Id)
-            cancelAnimationFrame(play14Id)
-            
-            posicao2=0
-            
-            jogar5()
-         }
-         play12started=true
-      play12Id = requestAnimationFrame(play12);
-       
-      
-
-    }  
-     
- }
+    pausar() {
+        this.pausa = !this.pausa
+        console.log("pausa " + this.pausa)
+        cancelAnimationFrame(this.in1.animationId);
+        cancelAnimationFrame(this.in2.animationId);
+        cancelAnimationFrame(this.in3.animationId);
+        cancelAnimationFrame(corZebraId);
+        cancelAnimationFrame(arvoreId);
 
 
+    }
+    parar() {
+        this.pausa = false
+        cancelAnimationFrame(this.in1.animationId);
+        cancelAnimationFrame(this.in2.animationId);
+        cancelAnimationFrame(this.in3.animationId);
+        this.in1.animationId = null;
+        this.in2.animationId = null;
+        this.in3.animationId = null;
+        this.in3.style.top = "-188px";
+        this.in2.style.top = "-188px";
+        this.in1.style.top = "-188px";
+        this.cardCentro.style.left = '200px'
+        this.score = 0
 
 
-function play13() {
-    
-     const explosao=document.querySelector(".explosao")
-     const cardCentro = document.querySelector(".carcentro");
-     
-     if (posicao1 < 765 && play13Started==false) {
-        //console.log( "posicao1 "+posicao1)
-         posicao1 = posicao1 + velocidade;
-         in2.style.top = posicao1 + 'px';
-         if(cardCentro.style.display==="block" && posicao1>578){
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-             cardCentro.style.display="none"
-             explosao2.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornarcentro()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-            
-             }, "350");
-           }
-         if (posicao1 > 578) {
-             in2.style.position = "absolute";
-             in2.style.top = "-188px";
-            
-             play13Started=true
-             if(play15Started=false){
-             posicao1=-188-(765-578)}
-             score = score + 1;
-             mostraScore()
-       
-         }
-         
-     }
-      
-     play13Id = requestAnimationFrame(play13);
-     
- }
-
- function play14() {
-      const explosao2=document.querySelector(".explosao2")
-      const cardEsquerda = document.querySelector(".caresquerda");
-     if (posicao2 < 765 && posicao1 >= 188 && play14Started==false) {
-         posicao2 = posicao2 + velocidade;
-         in1.style.top = posicao2 + 'px';
-         if(posicao2>578 && cardEsquerda.style.display==="block"){
-
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";;
-             cardEsquerda.style.display="none"
-             explosao.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornaresqurda()
-              posicao1=0
-              playStarted=false
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              
-             }, "350");
-           }
-         if (posicao2 > 700) {
-             in1.style.position = "absolute";
-             in1.style.top = "-188px";
-             
-             play11Started=true
-               
-             score=score+1
-             mostraScore()
-             play14Started=true
-             if(score>=2 && !play15Started){
-            play15()
-            play15Started=false
-        }  
-           
-       }
-       
-     }
-     play14Id = requestAnimationFrame(play14);
-     
- }
-
- function play15() {
-    posicao1=0
-    //console.log( "posicao2 "+posicao2)
-     const cardDireita = document.querySelector(".cardireita");
-     const explosao3=document.getElementById("explosao3")
-     if (posicao3<765 && posicao2 >= 188 && play15Started==false ) {
-        
-         posicao3 = posicao3 + velocidade;
-         in3.style.top = posicao3 + 'px';
-        
-         if(posicao3>578 && cardDireita.style.display==="block"){
-             
-             
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";;
-             cardDireita.style.display="none"
-             explosao3.style.display="block"
-             //parar()
-             setTimeout(() => {
-              alert("Game Over")
-              parar()
-              retornardireita()
-              //jogarStarted=false
-              score=0
-              mostraScore()
-              //const atualizaScore=document.querySelector(".score")
-             // atualizaScore.value=score
-             }, "350");
-           }
-         if (posicao3 > 578) {
-             
-             in3.style.position = "absolute";
-             in3.style.top = "-188px";
-             posicao3=-188-(765-578)
-             score=score+1
-             mostraScore()
-             
-             playStarted=false
-             play2Started=false
-             
-            cancelAnimationFrame(playId)
-            cancelAnimationFrame(play2Id)
-            
-            posicao2=0
-            
-            jogar()
-         }
-         play15started=true
-      play15Id = requestAnimationFrame(play15);
-       
-      
-
-    }  
-     
- }
+        this.mostraScore()
+        cancelAnimationFrame(this.corZebraId);
+        cancelAnimationFrame(this.arvoreId);
+    }
 
 
+    Score() {
+        this.score += 100
+    }
+    mostraScore() {
+        this.atualizaScore.value = this.score
+    }
 
 
+    handlePausa(event) {
+        if (event.code === "Space") {
+            console.log(event)
+            this.pausar()
+        }
+    }
 
- function score(){
-    let score=0
-    score=score+1
 }
 
-function mostraScore(){
-     const atualizaScore=document.querySelector(".score")
-     atualizaScore.value=score
-}
- 
-function zerarPosicoes(){
-    posicao1 = 0;
-    posicao2 = 0;
-    posicao3 = 0;
-    console.log("zerar posiçoes")
-}
+const arvore = document.getElementById("arvore");
+const in1 = document.querySelector("#iniesquerda");
+const in2 = document.querySelector("#inicentro");
+const in3 = document.querySelector("#inidireita");
+const cardDireita = document.querySelector(".cardireita");
+const cardCentro = document.querySelector(".carcentro");
+const cardEsquerda = document.querySelector(".caresquerda")
+const explosao = document.getElementById("explosao")
+const explosao2 = document.getElementById("explosao2")
+const explosao3 = document.getElementById("explosao3")
+const estrada = document.getElementById("estrada");
+const atualizaScore = document.querySelector(".score")
+const iniciar = document.getElementById("jogar")
+const parar = document.getElementById("parar")
 
- function parar() {
-      pausa=false
-     cancelAnimationFrame(play3Id);
-     cancelAnimationFrame(play2Id);
-     cancelAnimationFrame(playId);
-      cancelAnimationFrame(play6Id);
-     cancelAnimationFrame(play5Id);
-     cancelAnimationFrame(play4Id);
-     cancelAnimationFrame(play9Id);
-     cancelAnimationFrame(play8Id);
-     cancelAnimationFrame(play7Id);
-    cancelAnimationFrame(play10Id);
-     cancelAnimationFrame(play11Id);
-     cancelAnimationFrame(play12Id);
-     in3.style.position = "absolute";
-             in3.style.top = "-188px";
-            // posicao3=-188-(765-578)
-      in2.style.position = "absolute";
-             in2.style.top = "-188px";
-     in1.style.position = "absolute";
-             in1.style.top = "-188px";
-     score=0
-     playStarted=false
-     play2Started=false
-     posicao1 = 0;
-     posicao2 = 0;
-     posicao3 = 0;
-     mostraScore()
- }
+const corrida = new jogoCorrida();
 
-function pausar(){
-     
-      pausa=true
-      console.log(pausa)
-      cancelAnimationFrame(play3Id);
-     cancelAnimationFrame(play2Id);
-     cancelAnimationFrame(playId);
-      cancelAnimationFrame(play6Id);
-     cancelAnimationFrame(play5Id);
-     cancelAnimationFrame(play4Id);
-     cancelAnimationFrame(play9Id);
-     cancelAnimationFrame(play8Id);
-     cancelAnimationFrame(play7Id);
-     cancelAnimationFrame(play10Id);
-     cancelAnimationFrame(play11Id);
-     cancelAnimationFrame(play12Id);
-} 
+document.addEventListener('DOMContentLoaded', () => {
+    iniciar.addEventListener('click', () => {
+        ;
 
-function retomar(){
-   pausa=false
-   if(jogar1Ativa==true){
-        console.log("estou aqui")
-           jogar()}
-   else if(jogar2Ativa=="true"){
-           jogar2()
-     }else if(jogar3Ativa==true){
-           jogar3()
-      }
-   }
+        corrida.jogar();
 
- document.addEventListener('keyup', function(event){
-          
-          
-          if(event.code==="Space" /*|| event.key==="Space"*/&& pausa==false){
-              pausar()          
-       }     
+    })
 })
- document.addEventListener('keyup', function(event){
-      const tecla=event.code
-      console.log(tecla)
-     
-     if(event.code==="Enter" && pausa==true){
-      
-      retomar()
-}
+document.addEventListener('DOMContentLoaded', () => {
+    parar.addEventListener('click', () => {
+        ;
+
+        corrida.parar();
+
+    })
 })
-
-
 
